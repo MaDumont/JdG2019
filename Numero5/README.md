@@ -18,7 +18,11 @@ vinaigre
 ```
 
 ### Required to launch
-* TODO
+Erlang Escript
 
 ### Explanation
-* TODO
+Les mots sont vérifiés et affichés immédiatement. On peut donc passé un fichier pour avoir la sortie désirée.
+
+`cat input.txt | ./start.sh gre`
+
+Sinon on peut juste entrer les mots manuellemen.t

@@ -6,7 +6,7 @@ RSA crack.
 `start.sh 7 1037` is the expected format
 
 ### Required to launch
-* TODO
+Python
 
 ### Explanation
 * TODO

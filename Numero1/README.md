@@ -6,7 +6,8 @@ Le fichier `POST_alien.aln` contient un exemple de contenu POST pour ajouter un 
 Le fichier `GET_alien.aln` contient un exemple de réponse à un GET.
 
 ### Requis pour lancer
-* TODO
+`pip install flask`
+
+Pour lancer le server sur le port 5000: `FLASK_APP=server.py flask run`
 
 ### Mise en contexte
-* TODO
