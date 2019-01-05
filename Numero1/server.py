@@ -1,11 +1,11 @@
-from flask import Flask, abort
+from flask import Flask, abort, request
 import json
 app = Flask(__name__)
 
 ALIENS = []
 
 def encode(data):
-    data = json.dumps(data)
+    data = json.dumps(data, indent=4)
     data = data.replace('"', "'")
     data = data.replace('[', "/*")
     data = data.replace(']', "*/")
@@ -26,8 +26,8 @@ def decode(data):
 
 def find_alien(name):
     for alien in ALIENS:
-        if alien['name'] == alien:
-            return encode(alien)
+        if alien['name'] == name:
+            return alien
 
 @app.route("/api/alien", methods=['GET'])
 def get_aliens():
@@ -36,7 +36,9 @@ def get_aliens():
 
 @app.route("/api/alien", methods=['POST'])
 def post_alien():
-    data = decode(request.data)
+    data = request.get_data()
+    data = decode(data)
+    
     ALIENS.append(data)
 
     return encode({'ok': 200})
@@ -79,7 +81,7 @@ def put_alien(name):
             break
 
     if remove_index is not None:
-        ALIENS[i] = decode(request.data)
+        ALIENS[i] = decode(request.get_data())
         return ''
     else:
         abort(400)
