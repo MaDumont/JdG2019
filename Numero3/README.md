@@ -36,7 +36,7 @@ Actions must be printed in a file with the following format.
 	* Climb down: 6
 
 ### Required to launch
-* TODO
+* Changer le nom fichier texte dans le fichier nom
 
 ### Explanation
-* TODO
+* Trouver les paths fonctionne pratiquement, il manque a trouver le meilleur chemin
